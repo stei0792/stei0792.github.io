@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div class="title">
+    <h2>Corn Analysis Modeler</h2>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-12" style="background-color: lightgray">
+          <br/>
+          <div id="variables" class="form-group shiny-input-checkboxgroup shiny-input-container">
+            <label class="control-label" for="variables">Select Variables to use in Model:</label>
+            <div class="shiny-options-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="variables" value="Ethanol.ZKH18" checked="checked"/>
+                  <span>Ethanol</span>
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="variables" value="Soybeans.ZSH18"/>
+                  <span>Soybeans</span>
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="variables" value="Mpls..MN.HI.Temp"/>
+                  <span>Mpls Hi Temp</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <br/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <hr/>
+          <h3>Prediction</h3>
+          <div>
+            <span style="font-weight:bold;">Corn:</span>
+            <span id="cornValueText" class="shiny-text-output" style="font-weight: bold; color: red;"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12" style="background-color: lightgray">
+          <div style="text-decoration: underline; font-weight: bold;">Adjust Variable Values for Predicting Price</div>
+          <div style="font-style: italic; font-size: 10px;">(Note: Slider Value only valid for selected variables)</div>
+          <br/>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="sliderEthanol">Ethanol Value:</label>
+            <input class="js-range-slider" id="sliderEthanol" data-min="1" data-max="4" data-from="1.25" data-step="0.25" data-grid="true" data-grid-num="6" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
+          </div>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="sliderSoybeans">Soybean Value:</label>
+            <input class="js-range-slider" id="sliderSoybeans" data-min="1" data-max="12" data-from="9.5" data-step="0.25" data-grid="true" data-grid-num="8.8" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
+          </div>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="sliderWeather">Weather Temp:</label>
+            <input class="js-range-slider" id="sliderWeather" data-min="-20" data-max="90" data-from="75" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div id="plotModel" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+      <hr/>
+      <div style="font-weight: bold;">Regression Model:</div>
+      <pre id="fitInfo" class="shiny-text-output noplaceholder"></pre>
+    </div>
+  </div>
+</div>
