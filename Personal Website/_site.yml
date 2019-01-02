@@ -1,0 +1,22 @@
+name: "Miranda Steinmetz"
+output_dir: "."
+navbar:
+  title: "Miranda Steinmetz"
+  left:
+    - text: "Home"
+      href: home.html
+    - text: "Projects"
+      href: projects.html
+    - text: "Programming"
+      href: programming.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: contact.html
+    - icon: fa-github fa-lg
+      href: http://github.com/stei0792
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/mirandasteinmetz/
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
